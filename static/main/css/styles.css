@@ -146,13 +146,7 @@ li {
   width: auto;
 }
 
-.home_bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/static/main/images/home_bg.jpg");
-  height: 540px;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
+
 
 .property-image {
   height: 45vh !important;
@@ -270,13 +264,7 @@ li {
     box-sizing: border-box;
     margin-top: 100px !important;
   }
-  .home_bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("/static/main/images/home_bg.jpg");
-    height: 230px;
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
+  
 
   .slide_images {
     height: 300px !important;
