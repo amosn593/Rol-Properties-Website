@@ -1,0 +1,118 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+<div class="container text-center py-4 detailed">
+  <div class="container">
+    <!-- Top bar -->
+    <div class="row my-2 py-2">
+      <div class="col-md-12">
+        <h4 class="text-center">{{post.name}}</h4>
+      </div>
+    </div>
+    <div class="row my-2 py-2">
+      <div class="col-md-12">
+        <h4 class="text-center">
+          KSH {{post.price}} {{post.price_units}} | For {{post.type_for}} | {{post.region}}
+        </h4>
+      </div>
+    </div>
+  </div>
+  <!-- Images -->
+  <div class="container">
+    <div class="row my-2 py-2">
+      <div class="col-md-4">
+        <div class="card text-center">
+          <img
+            src="{{post.image_1.url}}"
+            class="card-img-top detailed-image"
+            alt="property image"
+          />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center">
+          <img
+            src="{{post.image_2.url}}"
+            class="card-img-top detailed-image"
+            alt="property image"
+          />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center">
+          <img
+            src="{{post.image_3.url}}"
+            class="card-img-top detailed-image"
+            alt="property image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row my-2 py-2">
+      <div class="col-md-4">
+        <div class="card text-center">
+          <img
+            src="{{post.image_4.url}}"
+            class="card-img-top detailed-image"
+            alt="property image"
+          />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center">
+          <img
+            src="{{post.image_5.url}}"
+            class="card-img-top detailed-image"
+            alt="property image"
+          />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center">
+          <img
+            src="{{post.image_6.url}}"
+            class="card-img-top detailed-image"
+            alt="property image"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Short intro  -->
+  <div class="row my-3 py-3">
+    <div class="col-md-12 d-flex justify-content-evenly">
+      <i class="fa fa-bed" aria-hidden="true"></i>
+      <span><p>{{post.rooms}} Rooms</p></span>
+      <i class="fa fa-bed" aria-hidden="true"></i>
+      <span><p>{{post.bedrooms}} Bedrooms</p></span>
+      <i class="fa fa-bath" aria-hidden="true"></i
+      ><span><p>{{post.bathrooms}} Bathrooms</p></span>
+      <i class="fa fa-area-chart" aria-hidden="true"></i
+      ><span><p>{{post.sqfts}} SqFts</p></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h5 class="text-start">Features</h5>
+      <hr />
+      <div class="d-flex">
+        <p class="px-2">Water</p>
+        <p class="px-2">Pets allowed</p>
+        <p class="px-2">Sewer</p>
+        <p class="px-2">Electricity</p>
+        <p class="px-2">Security</p>
+      </div>
+    </div>
+  </div>
+  <!-- description  -->
+  <div class="row my-3 py-3">
+    <div class="col-md-12">
+      <p>{{post.description}}</p>
+    </div>
+  </div>
+
+  <!-- Book View form -->
+  <!-- Book a Viewing for the property -->
+  <div class="container">
+    <div>{% include 'main/forms/booking.html' %}</div>
+  </div>
+</div>
+{% endblock content %}

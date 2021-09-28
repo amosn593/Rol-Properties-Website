@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+
+<!-- Search form -->
+<div>{% include "main/forms/searchForm.html" %}</div>
+
+<!-- Slides -->
+<div>{% include "main/incl/slides.html" %}</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <p class="text-center">{{num}} Results Found...</p>
+    </div>
+  </div>
+
+  <div class="row">
+    {% for post in posts %}
+    <div class="col-md-4 my-2 py-2">
+      <div class="card text-center">
+        <img
+          src="{{post.image_1.url}}"
+          class="card-img-top"
+          alt="Property Image"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-start price">KSH {{post.price}}{{post.price_units}}</h5>
+          <p class="card-text text-start title">{{post.name}}</p>
+          <p class="text-start my-0 py-0">Region: {{post.region.name}}</p>
+          <p class="text-start my-0 py-0">For: {{post.category}}</p>
+          <!-- <p class="text-start my-0 py-0">{{post.short_description}}</p> -->
+          <a
+            href="{% url 'main:detailedview' slug=post.slug %}"
+            class="stretched-link"
+          ></a>
+        </div>
+        <div class="card-footer text-muted d-flex justify-content-between">
+          <i class="fa fa-bed" aria-hidden="true"></i>
+          <span><p>{{post.bedrooms}} Bedrooms</p></span>
+          <i class="fa fa-bath" aria-hidden="true"></i
+          ><span><p>{{post.bathrooms}} Bathrooms</p></span>
+          <i class="fa fa-area-chart" aria-hidden="true"></i
+          ><span><p>{{post.sqfts}} SqFts</p></span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="container-fluid services-bg">
+  {% include 'main/incl/services.html' %}
+</div>
+
+{% endblock content %}

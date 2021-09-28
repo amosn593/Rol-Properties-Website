@@ -1,0 +1,64 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary topnav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'main:index' %}">
+      <img
+        src="{% static 'main/images/logo.jpeg' %}"
+        alt="Rol Properties Logo"
+        class="d-inline-block align-text-top rounded"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 topul">
+        <li class="nav-item topli">
+          <a
+            class="nav-link toplink"
+            aria-current="page"
+            href="{% url 'main:index' %}"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item topli">
+          <a
+            class="nav-link toplink"
+            aria-current="page"
+            href="{% url 'main:about' %}"
+            >About Us</a
+          >
+        </li>
+        <li class="nav-item topli">
+          <a class="nav-link toplink" href="{% url 'main:sale' %}"
+            >Properties For Sale</a
+          >
+        </li>
+        <li class="nav-item topli">
+          <a class="nav-link toplink" href="{% url 'main:rent' %}"
+            >Properties For Rent</a
+          >
+        </li>
+        <li class="nav-item topli">
+          <a class="nav-link toplink" href="#">Land</a>
+        </li>
+        <li class="nav-item topli">
+          <a class="nav-link toplink" href="{% url 'main:contact' %}"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+
+      <span class="navbar-text">
+        <a href="{% url 'main:listing' %}" class="btn-1">List Property</a>
+      </span>
+    </div>
+  </div>
+</nav>

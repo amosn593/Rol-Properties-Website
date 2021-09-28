@@ -1,0 +1,56 @@
+{% load static %}
+<div class="container mb-5 pb-5">
+  <div class="row mt-5">
+    <div class="col-md-3 mt-3">
+      <div class="d-flex mb-2">
+        <img
+          src="{% static 'main/images/logo.jpeg' %}"
+          alt="Rol Properties Logo"
+          class="rounded"
+        />
+      </div>
+      <p>For all your needs</p>
+      <div class="d-flex social-icons">
+        <i class="bi bi-instagram mx-2 icons-spin"></i>
+        <i class="bi bi-facebook mx-2 icons-spin"></i>
+        <i class="bi bi-twitter mx-2 icons-spin"></i>
+        <i class="bi bi-youtube mx-2 icons-spin"></i>
+      </div>
+    </div>
+    <div class="col-md-3 mt-3">
+      <h4>Navigation</h4>
+      <p>
+        <a href="{% url 'main:index' %}" class="footer-link">Home</a>
+      </p>
+      <p>
+        <a href="{% url 'main:about' %}" class="footer-link">About Us</a>
+      </p>
+      <p>
+        <a href="{% url 'main:sale' %}" class="footer-link"
+          >Properties For Sale</a
+        >
+      </p>
+      <p>
+        <a href="{% url 'main:rent' %}" class="footer-link"
+          >Properties For Rent</a
+        >
+      </p>
+      <p>
+        <a href="#" class="footer-link">Land</a>
+      </p>
+    </div>
+    <div class="col-md-3 mt-3">
+      <h4>Services</h4>
+      <p>Real Estate</p>
+      <p>Property Management</p>
+    </div>
+    <div class="col-md-3 mt-3">
+      <h4>Contacts Us</h4>
+      <p>Sameer Park Mombasa Road,</p>
+      <p>P.O. Box 369 – 00100 GPO</p>
+      <p>Nairobi, Kenya</p>
+      <p>Tel: +254 786 995077</p>
+      <p>info@rolproperties.com</p>
+    </div>
+  </div>
+</div>

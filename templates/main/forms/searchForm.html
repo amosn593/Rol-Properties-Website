@@ -1,0 +1,54 @@
+<!-- Search form -->
+<div class="container mt-3">
+  <form
+    class="row g-3 mt-4 align-items-center"
+    method="POST"
+    action="{% url 'main:search' %}"
+  >
+    {% csrf_token %}
+    <div class="col-sm-3 my-1">
+      <label class="visually-hidden">Key Word</label>
+      <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+      <input
+        type="text"
+        class="form-control"
+        name="keyword"
+        placeholder="Enter Keyword"
+        required
+      />
+    </div>
+    <div class="col-sm-2 my-1">
+      <label class="visually-hidden">Region</label>
+      <input
+        type="text"
+        class="form-control"
+        name="region"
+        placeholder="Enter Region"
+        required
+      />
+    </div>
+    <div class="col-sm-2 my-1">
+      <label class="visually-hidden">Property</label>
+      <select class="form-select" name="category" required>
+        <option selected>Select Property...</option>
+        <option value="Sale">Sale</option>
+        <option value="Rent">Rental</option>
+        <option value="Land">Land</option>
+      </select>
+    </div>
+    <div class="col-sm-3 my-1">
+      <label class="visually-hidden">Max price</label>
+      <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+      <input
+        type="number"
+        class="form-control"
+        name="max_price"
+        placeholder="Maximum Price KSH"
+        required
+      />
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+</div>

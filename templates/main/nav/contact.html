@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+
+<div class="container mt-3 pb-4">
+  <h4 class="text-center headings mt-4">Contact us</h4>
+  <p class="text-center">Let us help you find your dream home</p>
+  <form class="row g-3" method="POST" action="">
+    {% csrf_token %}
+    <div class="col-md-6">
+      <label class="form-label">Full Name</label>
+      <input type="text" name="name" class="form-control" required />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Mobile Number</label>
+      <input type="number" name="phone" class="form-control" required />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Address</label>
+      <input type="text" name="address" class="form-control" required />
+    </div>
+    <div class="col-md-12">
+      <label class="form-label">Message</label>
+      <textarea
+        type="text"
+        name="message"
+        class="form-control"
+        name=""
+        cols="30"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+    <div class="col-12 text-center py-4">
+      <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+  </form>
+</div>
+<div class="container-fluid services-bg">
+  {% include 'main/incl/services.html' %}
+</div>
+{% endblock content %}

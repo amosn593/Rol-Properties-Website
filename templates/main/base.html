@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rolproperties</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="ROL Properties was formed in 2021 with a vision of reinventing the properties market in making it accessible to many world-wide. Our main aim is to offer a service that will ensure our clients experience integrity, transparency, detailed process & professionalism in the market in accordance to world approved standards.ROL Properties works together with other experts in the market to assist in processing nothing but genuine property (ies) in in the market in a professional manner.We focus on Renting, Owning & Leasing properties across Kenya which gives the seller or the buyer an opportunity to genuinely get what they expect & want.Please reach out to us for support in acquiring property (ies), assistance in rentals & support in leasing for various investment reasons."
+    />
+
+    <meta
+      name="keywords"
+      content="rolproperties, Real Estate Agency management & linkages with our versed network of collaborators, Assistance in buying residential, industrial or commercial properties advertisements, Sellers management on rental or selling of properties, Support in the legal transfers of properties, Support in searches & verifications, Land processing support i.e., legal, land searches, seating in land boards"
+    />
+    <meta name="author" content="rolproperties" />
+    <meta name="copyright" content="2021 rolProperties" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'main/images/logo.jpeg' %}"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}" />
+  </head>
+  <body>
+    <div id="page-container">
+      <!-- Top Nav  -->
+      <!-- <div>{% include "main/incl/navigation.html" %}</div> -->
+
+      <div>{% include "main/incl/bootnav.html" %}</div>
+
+      <!-- main content -->
+      <div id="content-wrap">
+        <!-- {% include 'main/alerts/alerts.html' %} -->
+        <!-- all other page content -->
+        {% block content%} {% endblock content %}
+
+        <!-- Top Footer -->
+        <div>{% include "main/incl/top-footer.html" %}</div>
+      </div>
+
+      <!-- Footer  -->
+      <div class="container-fluid" id="footer">
+        <div>{% include "main/incl/lower-footer.html" %}</div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- <script src="{% static 'main/js/scroll.js' %}"></script> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+       {% if messages %}
+      {% for msg in messages%}
+      swal({
+              text: "{{msg}}",
+              icon: "{{msg.tags}}",
+          });
+      {% endfor%}
+      {% endif %}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+.vscode
+property/.env
+venv
+media
+media/images
+db.sqlite3

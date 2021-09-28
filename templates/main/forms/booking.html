@@ -1,0 +1,74 @@
+<div class="container">
+  <button
+    type="button"
+    class="w-100 btn-2"
+    data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop"
+  >
+    Book a Viewing for the property
+  </button>
+
+  <!-- Modal -->
+  <div
+    class="modal w-100 fade my-5 py-4"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header btn-primary">
+          <h5 class="modal-title" id="staticBackdropLabel">
+            Book a Viewing for the property
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="{% url 'main:booking' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <input
+                type="hidden"
+                class="form-control"
+                name="id"
+                value="{{post.id}}"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" name="name" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mobile Phone</label>
+              <input type="number" class="form-control" name="phone" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" name="email" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Your Location</label>
+              <input
+                type="text"
+                class="form-control"
+                name="location"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

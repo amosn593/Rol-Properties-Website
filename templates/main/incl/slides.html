@@ -1,0 +1,78 @@
+<div class="container">
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide my-3 py-3 home_bg1"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      {% for slide in slides %}
+      <div
+        class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}"
+      >
+        <img
+          src="{{slide.image_1.url}}"
+          class="d-block w-100 slide_images"
+          alt="featured properties images"
+        />
+        <div class="carousel-caption d-md-block">
+          <h3 class="pt-5 top-intro featured">
+            {{slide.bedrooms}} BedRooms - {{slide.bathrooms}} BathRooms -
+            {{slide.sqfts}} Sq Ft
+          </h3>
+          <h1 class="mt-4 top-title featured">{{slide.name}}</h1>
+          <h3 class="mt-4 top-price featured">
+            KSH {{slide.price}}{{slide.price_units}}
+          </h3>
+          <h5 class="my-0 py-2">For {{slide.category}}</h5>
+          <h5 class="my-0 py-2">{{slide.region}}</h5>
+          <a
+            href="{% url 'main:detailedview' slug=slide.slug %}"
+            class="mt-4 btn-2"
+            >View Property</a
+          >
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>

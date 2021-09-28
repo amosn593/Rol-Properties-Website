@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+<div class="container mt-3 pb-4">
+  <h4 class="text-center headings mt-4">List your property with us</h4>
+  <form class="row g-3 mt-4" method="POST" action="{% url 'main:listing' %}">
+    {% csrf_token %}
+    <div class="col-md-4">
+      <label class="form-label">Full Name</label>
+      <input type="text" name="name" class="form-control" required />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Mobile Number</label>
+      <input type="number" name="phone" class="form-control" required />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Email Address</label>
+      <input type="email" name="email" class="form-control" required />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Address</label>
+      <input type="text" name="address" class="form-control" required />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Region</label>
+      <input
+        type="text"
+        name="region"
+        class="form-control"
+        required
+        placeholder="NAIROBI, BURUBURU"
+      />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Property Type</label>
+      <input
+        type="text"
+        name="property"
+        class="form-control"
+        required
+        placeholder="Apartment, Home,  Office Block, or Land"
+      />
+    </div>
+
+    <div class="col-12 text-center py-4">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+<div class="container-fluid services-bg">
+  {% include 'main/incl/services.html' %}
+</div>
+
+{% endblock content %}
