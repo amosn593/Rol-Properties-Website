@@ -61,7 +61,7 @@ class Property(models.Model):
     seller = models.CharField(default="Seller", max_length=100)
     date_posted = models.DateField(auto_now_add=True)
     rooms = models.DecimalField(
-        decimal_places=0, max_digits=5)
+        decimal_places=0, max_digits=5, blank=True, null=True)
     bedrooms = models.DecimalField(
         decimal_places=0, max_digits=5, blank=True, null=True)
     bathrooms = models.DecimalField(
