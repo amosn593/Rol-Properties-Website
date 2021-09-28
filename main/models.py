@@ -56,6 +56,7 @@ UNITS = (
 
 
 class Property(models.Model):
+    '''property model'''
     name = models.CharField(max_length=30)
     slug = AutoSlugField(populate_from='name', unique=True)
     seller = models.CharField(default="Seller", max_length=100)
